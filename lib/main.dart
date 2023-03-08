@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-
-import 'HomePage.dart';
-
+import 'libruary.dart';
+import 'SMS.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -9,10 +7,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: HomePage(),
-    );
+ Widget build(BuildContext context) {
+    return  ScreenUtilInit(
+        designSize: Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (context, child) {
+          return MaterialApp(
+              debugShowCheckedModeBanner: false, 
+              home: HomePage());
+        });
   }
 }
 
