@@ -9,7 +9,7 @@ class CreatAcaunt extends StatefulWidget {
 
 class _CreatAcauntState extends State<CreatAcaunt> {
   var maskFormatter = new MaskTextInputFormatter(
-      mask: '+998 (##) ###-##-##',
+      mask: '+998 ## ###-##-##',
       filter: {"#": RegExp(r'[0-9]')},
       type: MaskAutoCompletionType.lazy);
 
