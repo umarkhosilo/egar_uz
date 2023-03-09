@@ -1,5 +1,5 @@
+import 'buttonbar.dart';
 import 'libruary.dart';
-import 'SMS.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
               debugShowCheckedModeBanner: false, 
-              home: HomePage());
+              home: ButtonNavigationBar());
         });
   }
 }

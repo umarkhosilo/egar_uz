@@ -109,7 +109,7 @@ class _SingUpState extends State<SingUp> {
                   width: 220.w,
                   child: Text("We will send sms your phone number.",
                       style: TextStyle(
-                          fontSize: 10,
+                          fontSize: 10.sp,
                           color: Color.fromRGBO(180, 180, 180, 1))),
                 ),
               ],
