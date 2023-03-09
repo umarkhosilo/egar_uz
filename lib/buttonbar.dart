@@ -26,6 +26,8 @@ class _ButtonNavigationBarState extends State<ButtonNavigationBar> {
     return Scaffold(
       body: listpage![_index],
       bottomNavigationBar: BottomNavigationBar(
+        
+        backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
         onTap: (e) {
           setState(() {
             _index = e;
@@ -34,13 +36,15 @@ class _ButtonNavigationBarState extends State<ButtonNavigationBar> {
         type:
             BottomNavigationBarType.fixed,
         currentIndex: _index,
-        elevation: 10,
-        selectedFontSize: 30.sp,
-        iconSize: 30.sp,
-        selectedItemColor: Colors.red,
+        elevation: 0,
+        selectedFontSize: 20.sp,
+        iconSize: 0.sp,
+        selectedItemColor: Colors.black,
         unselectedItemColor: Colors.grey,
         items: [
-          BottomNavigationBarItem(icon: 
+          BottomNavigationBarItem(
+            
+            icon: 
           Container(
              width: 20.w,
              height: 20.h,
@@ -49,7 +53,7 @@ class _ButtonNavigationBarState extends State<ButtonNavigationBar> {
                 image: AssetImage("assets/HomeIcon.png")
               )
              ),
-          ), label: ""),
+          ), label: "Home"),
           BottomNavigationBarItem(icon: Container(
              width: 20.w,
              height: 20.h,
@@ -58,7 +62,7 @@ class _ButtonNavigationBarState extends State<ButtonNavigationBar> {
                 image: AssetImage("assets/TripsIcon.png")
               )
              ),
-          ), label: ""),
+          ), label: "Trips"),
           BottomNavigationBarItem(icon: Container(
              width: 20.w,
              height: 20.h,
@@ -67,7 +71,7 @@ class _ButtonNavigationBarState extends State<ButtonNavigationBar> {
                 image: AssetImage("assets/SavedIcon.png")
               )
              ),
-          ), label: ""),
+          ), label: "Saved"),
           BottomNavigationBarItem(icon: Container(
              width: 20.w,
              height: 20.h,
@@ -76,7 +80,7 @@ class _ButtonNavigationBarState extends State<ButtonNavigationBar> {
                 image: AssetImage("assets/ProfilIcon.png")
               )
              ),
-          ), label: ""),
+          ), label: "Profile"),
         ],
       ),
     );

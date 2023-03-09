@@ -14,6 +14,7 @@ class _SMSState extends State<SMS> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {

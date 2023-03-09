@@ -13,7 +13,7 @@ class _ProfilPageState extends State<ProfilPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+      backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
     );
   }
 }

@@ -11,6 +11,7 @@ class _CarsPageState extends State<CarsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
       body: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 20.w,
@@ -49,7 +50,7 @@ class _CarsPageState extends State<CarsPage> {
                           decoration: BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage("assets/searchIcon.png")))),
-                      hintText: "Full Name",
+                      hintText: "Search",
                       hintStyle: TextStyle(
                           color: Color.fromRGBO(180, 180, 180, 1),
                           fontSize: 14),
@@ -61,7 +62,10 @@ class _CarsPageState extends State<CarsPage> {
                   width: 19.w,
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => FilterPage()));
+                  },
                   child: Container(
                     alignment: Alignment.center,
                     width: 45.w,
@@ -98,44 +102,38 @@ class _CarsPageState extends State<CarsPage> {
                 itemBuilder: (context, index) {
                   return Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(6),
-                       border: Border.all(
-                          color: Color.fromRGBO(180, 180, 180, 1), width: 1)
-                    ),
+                        borderRadius: BorderRadius.circular(6),
+                        border: Border.all(
+                            color: Color.fromRGBO(180, 180, 180, 1), width: 1)),
                     margin: EdgeInsets.symmetric(horizontal: 6.4.w),
                     alignment: Alignment.center,
                     width: 68.w,
                     height: 64.h,
-                    
                     child: Container(
                       width: 55.w,
                       height: 55.h,
-                        decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage(Info.CarsBrand[index])
-                      )
-                    ),
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage(Info.CarsBrand[index]))),
                     ),
                   );
                 },
                 scrollDirection: Axis.horizontal,
               ),
             ),
-
-            
             Row(
               children: [
                 Container(
-                  margin: EdgeInsets.symmetric(vertical: 26.h),
-                  child: Text("Hot offers",style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.w500),))
+                    margin: EdgeInsets.symmetric(vertical: 26.h),
+                    child: Text(
+                      "Hot offers",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ))
               ],
             ),
-
-
-
-            
-
-
           ],
         ),
       ),
