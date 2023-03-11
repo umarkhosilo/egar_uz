@@ -1,6 +1,6 @@
 import 'package:l/profil.dart';
 import 'package:l/saved.dart';
-import 'package:l/trips.dart';
+import 'package:l/My%20Rantales/trips.dart';
 
 import 'libruary.dart';
 

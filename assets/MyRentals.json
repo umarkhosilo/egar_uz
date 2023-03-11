@@ -1,0 +1,19 @@
+[
+    {
+        "title": "Tesla Model X",
+        "img": "assets/TeslaModelX.png",
+        "date": "03 Dec,14:00-19:00",
+        "duraction": "03 Hour",
+        "range": "60 Km",
+        "cost": "70.00.c"
+    },
+    {
+        "title": "Tesla Model X",
+        "img": "assets/SportCar.png",
+        "date": "03 Dec,14:00-19:00",
+        "duraction": "03 Hour",
+        "range": "60 Km",
+        "cost": "70.00.c"
+    }
+]
+    

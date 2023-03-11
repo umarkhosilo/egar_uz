@@ -1,7 +1,10 @@
 import 'buttonbar.dart';
 import 'libruary.dart';
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider<RantelesProvider>(create: ((context) => RantelesProvider())),
+   
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
