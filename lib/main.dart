@@ -1,6 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
+
 import 'buttonbar.dart';
 import 'libruary.dart';
-void main() {
+ main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+ 
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider<RantelesProvider>(create: ((context) => RantelesProvider())),
    

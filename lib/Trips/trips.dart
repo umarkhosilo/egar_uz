@@ -52,7 +52,7 @@ class _TripsPageState extends State<TripsPage> with TickerProviderStateMixin {
                       border: Border.all(
                           color: Color.fromRGBO(180, 180, 180, 1), width: 1)),
                   width: 335.w,
-                  height: 420.h,
+                  height: 430.h,
                   child: Column(
                     children: [
                       Row(
@@ -61,7 +61,7 @@ class _TripsPageState extends State<TripsPage> with TickerProviderStateMixin {
                             margin: EdgeInsets.symmetric(
                                 horizontal: 20.w, vertical: 20.h),
                             child: Text(
-                              "",
+                            snapshot.data[index].title,
                               style: TextStyle(
                                   fontSize: 14.sp, fontWeight: FontWeight.w700),
                             ),
@@ -72,7 +72,6 @@ class _TripsPageState extends State<TripsPage> with TickerProviderStateMixin {
                         width: 270.w,
                         height: 140.h,
                         decoration: BoxDecoration(
-                            color: Colors.pink,
                             image: DecorationImage(
                                 image: AssetImage(snapshot.data[index].img))),
                       ),
@@ -102,7 +101,7 @@ class _TripsPageState extends State<TripsPage> with TickerProviderStateMixin {
                               )),
                               trailing: Container(
                                 child: Text(
-                                  "03 Dec,14:00-19:00",
+                                  snapshot.data[index].date,
                                   style: TextStyle(
                                       fontSize: 8.sp,
                                       fontWeight: FontWeight.w400),
@@ -144,7 +143,7 @@ class _TripsPageState extends State<TripsPage> with TickerProviderStateMixin {
                               )),
                               trailing: Container(
                                 child: Text(
-                                  "03 Hour",
+                                  snapshot.data[index].duraction,
                                   style: TextStyle(
                                       fontSize: 8.sp,
                                       fontWeight: FontWeight.w400),
@@ -186,7 +185,7 @@ class _TripsPageState extends State<TripsPage> with TickerProviderStateMixin {
                               )),
                               trailing: Container(
                                 child: Text(
-                                  "60 Km",
+                                  snapshot.data[index].range,
                                   style: TextStyle(
                                       fontSize: 8.sp,
                                       fontWeight: FontWeight.w400),
@@ -228,7 +227,7 @@ class _TripsPageState extends State<TripsPage> with TickerProviderStateMixin {
                               )),
                               trailing: Container(
                                 child: Text(
-                                  '70.00.c',
+                                  snapshot.data[index].cost,
                                   style: TextStyle(
                                       fontSize: 8.sp,
                                       fontWeight: FontWeight.w400),

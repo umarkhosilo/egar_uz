@@ -1,5 +1,4 @@
-import 'package:l/My%20Rantales/RantalesService.dart';
-
+import 'package:l/Trips/RantalesService.dart';
 import '../libruary.dart';
 
 class RantelesProvider extends ChangeNotifier {

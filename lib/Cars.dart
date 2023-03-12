@@ -134,6 +134,45 @@ class _CarsPageState extends State<CarsPage> {
                     ))
               ],
             ),
+          
+               Container(
+                width: double.infinity,
+                height: 270.h,
+              child: GridView.builder(
+                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2,
+                 crossAxisSpacing: 20.r,
+                 mainAxisSpacing: 20.h,
+                 ),
+                itemCount: 10,
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: 158.w,
+                    height: 90.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8.r),
+                      border: Border.all(
+                          color: Color.fromRGBO(180, 180, 180, 1), width: 1)),
+                          child: Column(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.symmetric(vertical: 8.h),
+                                width: 123.w,
+                                height: 66.h,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: AssetImage("assets/LandCruiser200.png")
+                                  )
+                                ),
+                              ),
+                              Container(
+                                child: Text("Land Cruiser 200",style: TextStyle(fontWeight: FontWeight.w700,fontSize: 12.sp),),
+                              )
+                            ],
+                          ),
+                  );
+                },
+              ),
+            )
           ],
         ),
       ),

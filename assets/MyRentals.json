@@ -5,15 +5,15 @@
         "date": "03 Dec,14:00-19:00",
         "duraction": "03 Hour",
         "range": "60 Km",
-        "cost": "70.00.c"
+        "cost": "70,20$"
     },
     {
-        "title": "Tesla Model X",
-        "img": "assets/SportCar.png",
-        "date": "03 Dec,14:00-19:00",
-        "duraction": "03 Hour",
-        "range": "60 Km",
-        "cost": "70.00.c"
+        "title": "BMW M3 Sport edition",
+        "img": "assets/BMWM3SportEdition.png",
+        "date": "08 Dec,19:00-23:00",
+        "duraction": "08 Hour",
+        "range": "120 Km",
+        "cost": "99,99$"
     }
 ]
     

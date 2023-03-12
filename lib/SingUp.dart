@@ -8,6 +8,7 @@ class SingUp extends StatefulWidget {
 }
 
 class _SingUpState extends State<SingUp> {
+
   TextEditingController? cOntroller;
   bool cOntrollervalidation = false;
   var maskFormatter = new MaskTextInputFormatter(

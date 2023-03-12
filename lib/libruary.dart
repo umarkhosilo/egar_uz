@@ -13,8 +13,9 @@ export  'Cars.dart';
 export 'FilterPage.dart';
 export 'dart:convert';
 export 'package:flutter/services.dart';
-export 'My Rantales/RantalesModel.dart';
+export 'Trips/RantalesModel.dart';
 export 'package:provider/provider.dart';
-export 'My Rantales/RantalesProvider.dart';
-
+export 'Trips/RantalesProvider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 

@@ -8,7 +8,6 @@ class MyRentalsModel {
 
   MyRentalsModel(
       {this.title, this.img, this.date, this.duraction, this.range, this.cost});
-
   MyRentalsModel.fromJson(Map<String, dynamic> json) {
     title = json['title'];
     img = json['img'];
