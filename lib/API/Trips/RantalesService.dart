@@ -1,5 +1,4 @@
-
-import '../libruary.dart';
+import '../../libruary.dart';
 
 class RantalesService {
   Future<List<MyRentalsModel>> rantalesservice() async {

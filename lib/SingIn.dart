@@ -1,177 +1,155 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'libruary.dart';
 
-class CreatAcaunt extends StatefulWidget {
-  const CreatAcaunt({super.key});
+class SingUp extends StatefulWidget {
+  const SingUp({super.key});
 
   @override
-  State<CreatAcaunt> createState() => _CreatAcauntState();
+  State<SingUp> createState() => _SingUpState();
 }
 
-class _CreatAcauntState extends State<CreatAcaunt> {
+class _SingUpState extends State<SingUp> {
+  TextEditingController _controller = TextEditingController();
+  bool cOntrollervalidation = false;
   var maskFormatter = new MaskTextInputFormatter(
-      mask: '+998 ## ###-##-##',
+      mask: '+998 (##) ###-##-##',
       filter: {"#": RegExp(r'[0-9]')},
       type: MaskAutoCompletionType.lazy);
-
-  Color buttoncolor = Color.fromRGBO(229, 229, 229, 1);
-  bool usernamevalidation = false;
-  bool userphonevalidetion = false;
-  TextEditingController? usernamecontrol;
-  TextEditingController? userphone;
-  @override
-  void initState() {
-    userphone = TextEditingController();
-    usernamecontrol = TextEditingController();
-    // TODO: implement initState
-    super.initState();
-  }
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(229, 229, 229, 1),
+      backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
       appBar: AppBar(
         elevation: .0,
         backgroundColor: const Color.fromRGBO(229, 229, 229, 1),
-        leading: InkWell(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            child: Icon(
+        leading: IconButton(
+            onPressed: () => Navigator.pop(context),
+            icon: Icon(
               Icons.arrow_back_ios,
               color: Colors.black,
             )),
-        title: Text("Back", style: TextStyle(color: Colors.black)),
+        title: Text(
+          "Back",
+          style: TextStyle(color: Colors.black),
+        ),
       ),
-      body: Container(
-        alignment: Alignment.center,
-        child: Column(
-          children: [
-            SizedBox(
-              height: 49.sp,
-            ),
-            Container(
-              width: 193.w,
-              height: 40.h,
-              child: Text("Create account",
+      body: SafeArea(
+        child: Container(
+          alignment: Alignment.center,
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.symmetric(vertical: 40.h),
+                alignment: Alignment.center,
+                width: 189.w,
+                height: 39.h,
+                child: Text(
+                  "Welcome Back",
                   style: TextStyle(
-                      color: Color.fromRGBO(39, 39, 39, 1),
+                      color: Colors.black,
                       fontSize: 20.sp,
-                      fontWeight: FontWeight.w700)),
-            ),
-            SizedBox(
-              height: 50.h,
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                      color: Color.fromRGBO(180, 180, 180, 1), width: 1)),
-              width: 330.w,
-              height: 54.h,
-              child: TextFormField(
-                onChanged: (e) {
-                  if (e.length > 2) {
-                    usernamevalidation = true;
-                    print(usernamevalidation);
-                  } else {
-                    usernamevalidation = false;
-                    print(usernamevalidation);
-                  }
-
-                  if (usernamevalidation == true &&
-                      userphonevalidetion == true) {
-                    Info.TextColor = Color.fromRGBO(229, 229, 229, 1);
-                    buttoncolor = Color.fromRGBO(39, 39, 39, 1);
-                  } else {
-                    Info.TextColor = Color.fromRGBO(39, 39, 39, 1);
-                    buttoncolor = Color.fromRGBO(229, 229, 229, 1);
-                  }
-                  setState(() {});
-                },
-                controller: usernamecontrol,
-                cursorColor: Color.fromRGBO(39, 39, 39, 1),
-                cursorWidth: 1,
-                decoration: InputDecoration(
-                  hintText: "Full Name",
-                  hintStyle: TextStyle(
-                      color: Color.fromRGBO(180, 180, 180, 1), fontSize: 14),
-                  border: InputBorder.none,
+                      fontWeight: FontWeight.w700),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 15.h,
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                      color: Color.fromRGBO(180, 180, 180, 1), width: 1)),
-              width: 330.w,
-              height: 54.h,
-              child: TextFormField(
-                inputFormatters: [maskFormatter],
-                onChanged: (e) {
-                  if (e.length > 18) {
-                    userphonevalidetion = true;
-                    print(userphonevalidetion);
-                  } else {
-                    userphonevalidetion = false;
-                    print(usernamevalidation);
-                  }
-                  if (usernamevalidation == true &&
-                      userphonevalidetion == true) {
-                    Info.TextColor = Color.fromRGBO(229, 229, 229, 1);
-                    buttoncolor = Color.fromRGBO(39, 39, 39, 1);
-                  } else {
-                    Info.TextColor = Color.fromRGBO(39, 39, 39, 1);
-                    buttoncolor = Color.fromRGBO(229, 229, 229, 1);
-                  }
-                  setState(() {});
-                },
-                keyboardType: TextInputType.number,
-                controller: userphone,
-                cursorColor: Colors.black,
-                cursorWidth: 1,
-                decoration: InputDecoration(
-                  hintText: "+998 (_ _) _ _ _  _ _  _ _",
-                  hintStyle: TextStyle(
-                      color: Color.fromRGBO(180, 180, 180, 1), fontSize: 14),
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-
-            SizedBox(
-              height: 15.h,
-            ),
-            
-            Container(
-                width: 330.w,
-                height: 54.h,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        primary: buttoncolor,
-                        side: const BorderSide(
-                            width: 1, color: Color.fromRGBO(180, 180, 180, 1))),
-                    onPressed: () {
-                      setState(() {
-                        if (usernamevalidation == true &&
-                            userphonevalidetion == true) {
-                          buttoncolor = Colors.black;
-                        }
-                      });
+              Container(
+                child: Container(
+                  margin: EdgeInsets.symmetric(horizontal: 15.w),
+                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 7.h),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Info.bOrdercolor, width: 1)),
+                  width: 330.w,
+                  height: 54.h,
+                  child: TextFormField(
+                    onChanged: (e) {
+                      if (e.length > 7) {
+                        cOntrollervalidation = true;
+                        print(cOntrollervalidation);
+                      } else {
+                        cOntrollervalidation = false;
+                        print(cOntrollervalidation);
+                      }
+                      if (cOntrollervalidation == true) {
+                        Info.tExtcolor = Color.fromRGBO(229, 229, 229, 1);
+                        Info.butToncolor = Color.fromRGBO(39, 39, 39, 1);
+                        Info.bOrdercolor = Color.fromRGBO(180, 180, 180, 1);
+                      } else {
+                        Info.tExtcolor = Color.fromRGBO(39, 39, 39, 1);
+                        Info.butToncolor = Color.fromRGBO(229, 229, 229, 1);
+                        Info.bOrdercolor = Color.fromRGBO(253, 0, 0, 1);
+                      }
+                      setState(() {});
                     },
-                    child: Text(
-                      "Create account",
-                      style: TextStyle(color: Info.TextColor),
-                    )))
-          ],
+                    controller: _controller,
+                    cursorColor: Colors.black,
+                    cursorWidth: 1,
+                    decoration: InputDecoration(
+                      hintText: "+998 (_ _) _ _ _  _ _  _ _",
+                      hintStyle: TextStyle(
+                          color: Color.fromRGBO(180, 180, 180, 1),
+                          fontSize: 14),
+                      border: InputBorder.none,
+                    ),
+                  ),
+                ),
+              ),
+              Row(
+                children: [
+                  Container(
+                    alignment: Alignment.center,
+                    margin:
+                        EdgeInsets.symmetric(vertical: 12.h, horizontal: 15.w),
+                    width: 220.w,
+                    child: Text("We will send sms your phone number.",
+                        style: TextStyle(
+                            fontSize: 10.sp,
+                            color: Color.fromRGBO(180, 180, 180, 1))),
+                  ),
+                ],
+              ),
+              Container(
+                  margin: EdgeInsets.symmetric(vertical: 50.h),
+                  width: 330.w,
+                  height: 54.h,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Info.butToncolor,
+                          side: const BorderSide(
+                              width: 1,
+                              color: Color.fromRGBO(180, 180, 180, 1))),
+                      onPressed: () async {
+                        await _sendNumber(context);
+                      },
+                      child: Text(
+                        "Create account",
+                        style: TextStyle(color: Info.tExtcolor),
+                      )))
+            ],
+          ),
         ),
       ),
     );
+  }
+
+  _sendNumber(BuildContext context) async {
+    if (true) {
+      await _firebaseAuth.verifyPhoneNumber(
+        phoneNumber: _controller.text,
+        verificationCompleted: (credential) {},
+        verificationFailed: (error) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => HomePage()));
+        },
+        codeSent: (verificationId, resendToken) async {
+          await Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SmsPage(verificationId)),
+          );
+        },
+        codeAutoRetrievalTimeout: (verificationId) {},
+      );
+    }
   }
 }

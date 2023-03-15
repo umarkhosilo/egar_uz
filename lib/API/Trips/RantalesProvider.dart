@@ -1,5 +1,5 @@
-import 'package:l/Trips/RantalesService.dart';
-import '../libruary.dart';
+import 'package:l/API/Trips/RantalesService.dart';
+import '../../libruary.dart';
 
 class RantelesProvider extends ChangeNotifier {
   bool isLoading = false;

@@ -1,0 +1,21 @@
+[
+    {
+        "names": "Hot offers",
+        "carsname": [
+            "Land Cruiser 200","Mercedes-Benz 220"
+        ],
+        "cars": [
+            "assets/LandCruiser200.png","assets/LandCruiser200.png"
+        ]
+    },
+    
+    {
+        "names": "Convenient offers",
+        "carsname": [
+            "BMW M5 Sport edition","Toyota Prado"
+        ],
+        "cars": [
+            "assets/LandCruiser200.png","assets/LandCruiser200.png"
+        ]
+    }
+]

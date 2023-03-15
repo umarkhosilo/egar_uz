@@ -1,6 +1,6 @@
 export 'package:flutter/material.dart';
+export 'package:l/singIn.dart';
 export 'package:l/SingUp.dart';
-export 'package:l/SingIn.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
 export  'HomePage.dart';
 export 'main.dart';
@@ -13,9 +13,12 @@ export  'Cars.dart';
 export 'FilterPage.dart';
 export 'dart:convert';
 export 'package:flutter/services.dart';
-export 'Trips/RantalesModel.dart';
+export 'API/Trips/RantalesModel.dart';
 export 'package:provider/provider.dart';
-export 'Trips/RantalesProvider.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+export 'API/Trips/RantalesProvider.dart';
+export 'package:firebase_core/firebase_core.dart';
+export 'package:firebase_auth/firebase_auth.dart';
+export 'API/SelectCarApi/SelectProvider.dart';
+
+
 
