@@ -5,17 +5,40 @@
             "Land Cruiser 200","Mercedes-Benz 220"
         ],
         "cars": [
-            "assets/LandCruiser200.png","assets/LandCruiser200.png"
+            "assets/LandCruiser200.png","assets/mersedesbenz222.png"
+        ],
+        "model":[
+            "hello world1",
+            "hello world2"
         ]
     },
+
     
     {
         "names": "Convenient offers",
         "carsname": [
-            "BMW M5 Sport edition","Toyota Prado"
+            "BMW M5 Sport","Toyota Prado"
         ],
         "cars": [
-            "assets/LandCruiser200.png","assets/LandCruiser200.png"
+            "assets/BMWM5Sportedition.png","assets/ToyotaPrado.png"
+        ],
+        "model":[
+            "hello world"
         ]
+    },
+
+
+    {
+        "names": "Last added",
+        "carsname": [
+            "Chevrolet Corvette","Chevrolet Camaro"
+        ],
+        "cars": [
+            "assets/ChevroletCorvette.png","assets/ChevroletCamaro.png"
+        ],
+        "model":[
+            "hello world"
+        ]
+
     }
 ]

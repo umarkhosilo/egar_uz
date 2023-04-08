@@ -71,6 +71,7 @@ class _CreatAcauntState extends State<CreatAcaunt> {
               width: 330.w,
               height: 54.h,
               child: TextFormField(
+                
                 onChanged: (e) {
                   if (e.length > 2) {
                     usernamevalidation = true;
